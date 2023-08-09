@@ -51,6 +51,7 @@ export default function App() {
       </div>
 
     <div className='section-features-details-container'>
+      <div className='sections-features-detail-card-bg-line'></div>
     <div className='section-features-detail-card'>
       <div className='section-features-detail-card-round-icon brand-recognition-icon'></div>
       <div className='section-features-detail-card-text-box'>
@@ -82,8 +83,38 @@ export default function App() {
       </div>
     </section>
     <footer className='footer'>
-      <div className='footer-gridcontainer'>
-
+      <div className='footer-grid-container'>
+        <div className='footer-logo-container'>
+        <div className='footer-logo'> </div>
+         </div>
+        <div className='footer-grid-center-container'>
+       <div className='footer-links-container'>
+        <div className='footer-links-heading'>Features</div>
+        <div className='footer-links'>Link Shortening</div>
+        <div className='footer-links'>Branded Links</div>
+        <div className='footer-links'>Analytics</div>
+       </div>
+        <div className='footer-links-container'>
+        <div className='footer-links-heading'>Resources</div>
+        <div className='footer-links'>Blog</div>
+        <div className='footer-links'>Developers</div>
+        <div className='footer-links'>Support</div>
+       </div>
+        <div className='footer-links-container'>
+        <div className='footer-links-heading'>Company</div>
+        <div className='footer-links'>About</div>
+        <div className='footer-links'>Our Team</div>
+        <div className='footer-links'>Careers</div>
+        <div className='footer-links'>Contact</div>
+        </div>
+          </div> 
+        <div className='footer-socials-container'>
+        <div className='footer-socials facebook-icon'></div>
+        <div className='footer-socials twitter-icon'></div>
+        <div className='footer-socials pinterest-icon'></div>
+        <div className='footer-socials instagram-icon'></div>
+        <div className='footer-socials'></div>
+        </div>
       </div>
     </footer>
 
