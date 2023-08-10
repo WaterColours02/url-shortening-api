@@ -1,64 +1,78 @@
-import React, { useState, useEffect } from 'react';
-
-
+import React, { useState } from 'react';
 
 export default function ShortenAPI() {
- 
-    const [shortenedLink, setShortenedLink] = useState('');
+    const [shortenedLinks, setShortenedLinks] = useState([]);
     const [linkToShorten, setLinkToShorten] = useState('');
 
+    const API_END_POINT = "https://api.shrtco.de/v2/";
 
-    const handleChange = (e) => {}
-
-
-
-    const apiKey = 'YOUR_API_KEY';
-    const urlToShorten = 'https://www.example.com/your-long-url';
-    const apiEndpoint = 'https://api.example.com/shorten'; // Replace with actual API endpoint
-    
-    const headers = {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
+    const truncateURL = (url) => {
+        if (url.length > 60) {
+            return url.substring(0, 57) + '...';
+        }
+        return url;
     };
-    
-    const requestData = {
-      url: urlToShorten,
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch(`${API_END_POINT}shorten?url=${linkToShorten}`);
+            const data = await response.json();
+
+            if (data.ok) {
+                const newLink = {
+                    originalLink: truncateURL(linkToShorten), // Truncate original link if needed
+                    shortenedLink: data.result.short_link,
+                };
+                setShortenedLinks([...shortenedLinks, newLink]);
+                setLinkToShorten('');
+            } else {
+                // Handle error response
+                console.error('Error shortening link:', data.error);
+            }
+        } catch (error) {
+            console.error('Error sending request:', error);
+        }
     };
-    
-    fetch(apiEndpoint, {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(requestData),
-    })
-      .then(response => response.json())
-      .then(data => {
-        const shortenedUrl = data.short_link;
-        console.log('Shortened URL:', shortenedUrl);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    
 
+    const handleCopy = (text) => {
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+    };
 
+    return (
+      <div className='section-shorten-link-form'>
+        <div className='shorten-link-form-container'>
+            <form className='shorten-link-form' onSubmit={handleSubmit}>
+                <input
+                    className='shorten-link-input'
+                    style={{ fontSize: '20px' }}
+                    placeholder='Shorten a link here...'
+                    value={linkToShorten}
+                    onChange={(e) => setLinkToShorten(e.target.value)}
+                    />
+                <button className='shorten-link-form-button' type='submit'>
+                    Shorten it!
+                </button>
+            </form>
 
-    return(
- 
-       
-
-
-
-
-
-    <div className='shorten-link-form-container'>
-      <form className='shorten-link-form'> 
-        <input className='shorten-link-input' placeholder='Shorten a link here...'></input>
-        <button className='shorten-link-form-button'>Shorten it !</button>
-        <p className='shorten-link-alert-text'></p>
-      </form>
-    </div>
-
-    )
-
-} 
-
+            <div className='shortened-link-results-container'>
+                {shortenedLinks.map((link, index) => (
+                  <div key={index} className='shortened-link-result'>
+                        <p className='original-link'>{link.originalLink}</p>
+                        <p className='shortened-link'>{link.shortenedLink}</p>
+                        <button className='copy-link-button' onClick={() => handleCopy(link.shortenedLink)}>
+                            Copy Link
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </div>
+    );
+}
