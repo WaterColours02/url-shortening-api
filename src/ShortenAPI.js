@@ -8,7 +8,7 @@ export default function ShortenAPI() {
     const [linkToShorten, setLinkToShorten] = useState('');
 
 
-    handleChange = (e) => {}
+    const handleChange = (e) => {}
 
 
 

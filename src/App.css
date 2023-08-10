@@ -160,12 +160,11 @@ body {
 }
 
 .intro-image{
-  
+
   width: 100%;
   height: auto;
   transform: scale(75%);
   transform: translateX(-50px);
-
 }
 
 
@@ -189,7 +188,6 @@ body {
   justify-content: center;
 
   gap: 30px
-
 }
 
 .form-input-container{
@@ -197,7 +195,7 @@ body {
 }
 
 .shorten-link-input {
-  
+
   width: 60%;
   /* height: 40px; */
   padding: 20px;
@@ -220,9 +218,7 @@ body {
   border: none;
   color: white;
   font-size: 20px;
-  
-  
-
+  font-weight: bold;
 }
 
 
@@ -231,8 +227,6 @@ body {
   background-color: rgb(217, 222, 231);
   width: 100%;
   height: 1000px
-
-
 }
 
 .section-features-text-container {
@@ -244,6 +238,7 @@ body {
 }
 
 .section-features-title-box{
+  margin-top: 40px;
   display: grid;
   justify-content: center;
 }
@@ -265,7 +260,6 @@ body {
   font-size: 18px;
   
   color: grey;
-
 }
 
 .section-features-details-container {
@@ -275,13 +269,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap:  40px;
-  
+
 }
 
 
 .sections-features-detail-card-bg-line {
   height: 5px;
-  width: 80%;
+  width: 800px;
   background-color: var(--Cyan);
   border-radius: 5px;
   margin-bottom: 20px;
@@ -443,3 +437,47 @@ body {
   font-size: 15px;
   margin-bottom: 10px;
 }
+
+.footer-links:hover,
+.footer-links:focus,
+.footer-links:active {
+  cursor: pointer;
+  color: var(--Cyan);
+}
+
+.footer-socials-container {
+  display: flex;
+  justify-content: top;
+  align-items: top;
+  gap: 20px;
+}
+
+.footer-socials {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-socials-icon:hover path,
+.footer-socials-icon:focus path,
+.footer-socials-icon:active path {
+  cursor: pointer;
+  fill: aqua;
+}
+
+/* .facebook-icon {
+  background-image: url('../public/images/icon-facebook.svg');
+}
+
+.twitter-icon {
+  background-image: url('../public/images/icon-twitter.svg');
+}
+
+.pinterest-icon {
+  background-image: url('../public/images/icon-pinterest.svg');
+}
+
+.instagram-icon {
+  background-image: url('../public/images/icon-instagram.svg');
+} */
