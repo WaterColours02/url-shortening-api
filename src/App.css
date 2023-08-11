@@ -54,10 +54,6 @@ body {
   gap: 30%;
 }
 
-.header-logo{
-  /* transform: scale(125%); */
-  /* transform: translateX(5px); */
-}
 
 .header-left-group{
   display: flex;
@@ -179,6 +175,7 @@ body {
 
 .shorten-link-form-container {
   display: grid;
+  grid-template-rows: repeat(2, 1fr);
   place-content: center;
   transform: translateY(90px);
 
@@ -189,19 +186,29 @@ body {
   background-image: url( '../public/images/bg-shorten-desktop.svg' );
   background-color: var(--DarkViolet);
   width: 1110px;
-  height: 180px;
+  height: 100%;
 
   border-radius: 20px;
 
+}
+
+.shorten-link-form-grid-item {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: center;
 
-  gap: 30px
+  gap: 30px;
+
+  grid-row: 2;
 }
 
-
+.shorten-link-form-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+}
 
 .shorten-link-input {
   width: 60%;
@@ -220,6 +227,13 @@ body {
   padding-left: 20px;
 }
 
+.error-input-state {
+  border: 2px solid red;
+}
+
+.error-input-state:placeholder-shown {
+  color: red;
+}
 
 .shorten-link-form-button {
   background-color: var(--Cyan);
@@ -233,6 +247,20 @@ body {
   color: white;
   font-size: 20px;
   font-weight: bold;
+}
+
+.shorten-link-form-button:hover,
+.shorten-link-form-button:active {
+  cursor: pointer;
+  filter: brightness(1.75);
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 100px;
+  grid-row: 3;
 }
 
 .shortened-link-results-container {
