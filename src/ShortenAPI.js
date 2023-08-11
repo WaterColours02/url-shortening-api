@@ -60,7 +60,7 @@ export default function ShortenAPI() {
     };
 
     return (
-        <div className='section-shorten-link-form'>
+            <div className='shorten-API-div'>
             <div className='shorten-link-form-container'>
 
                 <form className='shorten-link-form' onSubmit={handleSubmit}>
@@ -83,8 +83,11 @@ export default function ShortenAPI() {
                     
                 </form>
                 
+                </div>
 
-                <div className='shortened-link-results-container'>
+                
+                        <div className='section-shortened-link-results'>
+                        <div className='shortened-link-results-container'>
                     {shortenedLinks.map((link, index) => (
                         <div key={index} className='shortened-link-result'>
                             <p className='original-link'>{link.originalLink}</p>
@@ -93,9 +96,12 @@ export default function ShortenAPI() {
                                 Copy Link
                             </button>
                         </div>
-                    ))}
-                </div>
-            </div>
-        </div>
+                        ))}
+                        </div>
+                        </div>
+                    </div>
+                
+            
+   
     );
 }
