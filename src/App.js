@@ -35,9 +35,10 @@ export default function App() {
     </section>
     </div>
 
-   < ShortenAPI />
+   
 
     <div className='section-features-container'>
+    < ShortenAPI />
     <section className='section-features'>
     <div className='section-features-text-container'>
       <div className='section-features-title-box'>
