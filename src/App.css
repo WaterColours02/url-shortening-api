@@ -40,8 +40,6 @@ body {
   font-size: 18px;
 }
 
-
-
 .header {
   margin: 60px auto;
   width: 1108px;
@@ -53,7 +51,14 @@ body {
   justify-items: space-between; 
   gap: 30%;
 }
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 
+  background-image: url( '../public/images/logo.svg' );
+}
 
 .header-left-group{
   display: flex;
@@ -573,18 +578,17 @@ body {
   fill: aqua;
 }
 
-/* .facebook-icon {
-  background-image: url('../public/images/icon-facebook.svg');
+
+/* write new media querry max width 375px */
+
+@media  (max-width: 375px) {
+  
+body {
+  max-width: 100vw;
+  overflow-x:hidden ;
 }
 
-.twitter-icon {
-  background-image: url('../public/images/icon-twitter.svg');
-}
 
-.pinterest-icon {
-  background-image: url('../public/images/icon-pinterest.svg');
-}
 
-.instagram-icon {
-  background-image: url('../public/images/icon-instagram.svg');
-} */
+
+}
