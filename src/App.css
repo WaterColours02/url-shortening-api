@@ -287,7 +287,7 @@ body {
   width: 100%;
   /* margin-top: 100px; */
   background-color: rgb(217, 222, 231);
-  /* transform: translateY(-100px); */
+  transform: translateY(-100px);
   /* z-index: -1000; */
 }
 

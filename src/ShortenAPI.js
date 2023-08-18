@@ -61,42 +61,40 @@ export default function ShortenAPI() {
 
     return (
             <div className='shorten-API-div'>
-            <div className='shorten-link-form-container'>
+           
 
-                <form className='shorten-link-form' onSubmit={handleSubmit}>
-                <div className='shorten-link-form-grid'>
-                    <div className='shorten-link-form-grid-item'>
+            <form className={`shorten-link-form ${inputError ? 'error-state-shift' : ''}`} onSubmit={handleSubmit}>
+                    <div className='input'>
+
                     <input
                         className={`shorten-link-input ${inputError ? 'error-input-state' : ''}`}
-                        style={{ fontSize: '20px', color: inputError ? 'red' : 'black' }}
+                        style={{
+                            fontSize: '20px',
+                            color: inputError ? 'red' : 'black',
+                            paddingLeft: '10px', // Add this line to set left padding
+                        }}
                         placeholder='Shorten a link here...'
+                        
                         value={linkToShorten}
                         onChange={(e) => setLinkToShorten(e.target.value)}
                         />
                     {inputError && <p className='error-message'>{inputError}</p>}
-                    </div>
-                    <div className='shorten-link-form-grid-item'>
+                        </div>
+                    
                     <button className='shorten-link-form-button' type='submit'>
                         Shorten it!
                     </button>
-                    </div>
-                    
-                </div>  
-                    
-                </form>
-                
-                </div>
+            </form>
 
-                
-                        <div className='section-shortened-link-results'>
-                        <div className='shortened-link-results-container'>
+            <div className='section-shortened-link-results'>
+                <div className='shortened-link-results-container'>
                     {shortenedLinks.map((link, index) => (
-                        <div key={index} className='shortened-link-result'>
-                            <p className='original-link'>{link.originalLink}</p>
-                            <p className='shortened-link'>{link.shortenedLink}</p>
-                            <button className='copy-link-button' onClick={() => handleCopy(link.shortenedLink)}>
+                 <div key={index} className='shortened-link-result'>
+                    <p className='original-link'>{link.originalLink}</p>
+                    <p className='shortened-link'>{link.shortenedLink}</p>
+                    <button className='copy-link-button' onClick={() => handleCopy(link.shortenedLink)}>
                                 Copy Link
-                            </button>
+                    </button>
                         </div>
                         ))}
                         </div>
