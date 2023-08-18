@@ -73,12 +73,14 @@ export default function ShortenAPI() {
                         value={linkToShorten}
                         onChange={(e) => setLinkToShorten(e.target.value)}
                         />
-                    
+                    {inputError && <p className='error-message'>{inputError}</p>}
+                    </div>
+                    <div className='shorten-link-form-grid-item'>
                     <button className='shorten-link-form-button' type='submit'>
                         Shorten it!
                     </button>
                     </div>
-                    {inputError && <p className='error-message'>{inputError}</p>}
+                    
                 </div>  
                     
                 </form>
