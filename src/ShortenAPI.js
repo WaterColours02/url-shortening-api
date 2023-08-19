@@ -62,7 +62,7 @@ export default function ShortenAPI() {
     return (
             <div className='shorten-API-div'>
            
-
+            <div className='shorten-link-container'>
             <form className={`shorten-link-form ${inputError ? 'error-state-shift' : ''}`} onSubmit={handleSubmit}>
                     <div className='input'>
 
@@ -100,7 +100,7 @@ export default function ShortenAPI() {
                         </div>
                         </div>
                     </div>
-                
+                </div>
             
    
     );
