@@ -444,6 +444,7 @@ body{
   margin-top: 60px;
   padding: 30px 0; 
   background-image: url('../public/images/bg-boost-desktop.svg');
+  background-size: 110%;
   background-color: var(--DarkViolet);
   background-repeat: repeat;
 
@@ -886,10 +887,10 @@ body{
 
   .sections-features-detail-card-bg-line {
     height: 8px;
-    width: 50%;
+    width: 800px;
     background-color: var(--Cyan);
     /* position: relative; */
-    left: 25%
+    left: 30%
   }
 
   .shift-down-1 {
