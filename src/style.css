@@ -562,7 +562,7 @@ body{
 /* // mobile // */
 
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 1200px) {
 
 
   body{
@@ -688,7 +688,8 @@ body{
 
   .intro-image-container {
     grid-row: 1;
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
     position: relative;
     transform: translate(-110px, -50px);
 
@@ -730,7 +731,7 @@ body{
 /* // DESKTOP // */
 
 
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: 1200px) {
 
   .desktop-hidden {
       display: none;
@@ -772,10 +773,12 @@ body{
     grid-column: 2;
     transform: translate(-100px, 0px);
     /* place-content: center; */
+
   }
 
   .intro-image {
     scale: 1.6;
+    /* margin: 0 auto; */
     
   }
 
